@@ -1,0 +1,20 @@
+{
+  "type": "mongodb",
+  "synchronize": true,
+  "logging": false,
+  "useNewUrlParser": true,
+  "url": "mongodb+srv://sachin:sachin@cluster0-8y6yi.mongodb.net/test?retryWrites=true&w=majority",
+  "ssl": true,
+  "useUnifiedTopology": true,
+  "entities": "[User]",
+  "authSource": "admin",
+  "replicaSet": "cluster0-shard-00-00-8y6yi",
+  "entities": ["src/entity/**/*.ts"],
+  "migrations": ["src/migration/**/*.ts"],
+  "subscribers": ["src/subscriber/**/*.ts"],
+  "cli": {
+    "entitiesDir": "src/entity",
+    "migrationsDir": "src/migration",
+    "subscribersDir": "src/subscriber"
+  }
+}
