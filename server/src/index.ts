@@ -6,7 +6,7 @@ import express from "express";
 import { ApolloServer } from "apollo-server-express";
 import { buildSchema } from "type-graphql";
 import { UserResolver } from "./UserResolver";
-import { createConnection, getMongoManager } from "typeorm";
+import { createConnection } from "typeorm";
 import cookieParser from "cookie-parser";
 import { User } from "./entity/User";
 import { sendRefreshToken } from "./sendRefreshToken";
@@ -33,8 +33,7 @@ const ObjectId = require("mongodb").ObjectId;
 
     // token is valid
     // we can send back an access token
-    const manager = getMongoManager();
-    const user = await manager.findOne(User, {
+    const user = await User.findOne({
       _id: ObjectId(payload.userId)
     });
 

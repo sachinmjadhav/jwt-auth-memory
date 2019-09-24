@@ -51,7 +51,8 @@ export class UserResolver {
     try {
       await User.insert({
         email,
-        password: hashedPassword
+        password: hashedPassword,
+        tokenVersion: 0
       });
     } catch (error) {
       console.log(error);
