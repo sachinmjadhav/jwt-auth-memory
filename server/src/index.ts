@@ -44,6 +44,9 @@ import cors from "cors";
       _id: ObjectId(payload.userId)
     });
 
+    console.log('user', user);
+    console.log('payload', payload);
+
     if (!user) {
       return res.send({ ok: false, accessToken: "" });
     }
