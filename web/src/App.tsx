@@ -13,7 +13,6 @@ export const App: React.FC<Props> = () => {
       credentials: "include"
     }).then(async x => {
       const res = await x.json();
-      console.log('res', res);
       setAccessToken(res.accessToken);
       setLoading(false);
     });
